@@ -38,39 +38,67 @@ class _HomeState extends State<Home> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text(textSalvarAtualizar+' Postagem'),
+            title: Text(
+              textSalvarAtualizar+' Postagem',
+              style: TextStyle(
+                fontSize: 17,
+                  height: 0.5
+              ),
+            ),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
+            Padding(
+            padding: EdgeInsets.fromLTRB(0.5, 0.1, 0.5, 0.5),
+            child:TextField(
+              style: TextStyle(
+                fontSize: 14.0,
+              ),
+              maxLength: 13,
+              autofocus: true,
+              controller: _etiquetaController,
+              decoration: InputDecoration(
+                //labelText: 'Etiqueta',
+                  hintText: 'Etiqueta'
+              ),
+            ),),
+          Padding(
+          padding: EdgeInsets.fromLTRB(0.5, 0.1, 0.5, 0.5),
+
+          child:
                 TextField(
-                  maxLength: 13,
-                  autofocus: true,
-                  controller: _etiquetaController,
-                  decoration: InputDecoration(
-                    labelText: 'Número da etiqueta',
+                  style: TextStyle(
+                      fontSize: 13.0,
                   ),
-                ),
-                TextField(
-                  maxLength: 40,
+                  //maxLength: 40,
                   autofocus: true,
                   controller: _produtoController,
                   decoration: InputDecoration(
-                    labelText: 'Nome do produto',
+                      hintText: 'Produto'
+                     //labelText: 'Nome do produto',
                   ),
-                ),
+                ),),
               ],
             ),
             actions: <Widget>[
               FlatButton(
                 onPressed: ()=>Navigator.pop(context),
-                child: Text('Cancelar'),
+                child: Text('Cancelar',
+                  style: TextStyle(
+                  fontSize: 13.0,
+                      height: 0.5
+                ),
+                ),
               ),
               FlatButton(
                 onPressed: (){
                   _salvarPostagem(postagemSeleciona: postagem);
                   Navigator.pop(context);
                 },
-                child: Text(textSalvarAtualizar),
+                child: Text(textSalvarAtualizar,style: TextStyle(
+                  fontSize: 13.0,
+                    height: 0.5
+                ),),
               ),
             ],
           );

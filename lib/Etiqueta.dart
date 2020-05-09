@@ -75,7 +75,8 @@ class _EtiquetaState extends State<Etiqueta> {
                 Image.asset("images/correios_logo.jpg"),
                 Text('RASTREAMENTO DA POSTAGEM',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
                     color: Colors.blue[900]
                   ),),
                 Padding(
